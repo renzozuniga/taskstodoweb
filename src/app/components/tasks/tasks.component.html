@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="card" style="margin:50px 0; border: none">
+                <div class="card-header" style="text-align: center; border: none; background-color: transparent;">
+                    <button type="button" style="background-color: orange; border-radius: 30px; border-color: orange;" class="btn btn-secondary btn-lg" disabled>WEDNESDAY, 20 March</button>
+                </div>
+
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let task of tasksList">
+
+                        <div class="d-flex justify-content-between">
+                            <label class="checkbox">
+                                <input type="checkbox" [(ngModel)]="task.checked" (change)="onClickUpdateTask($event, task)"/>
+                                <span class="warning"></span>
+                            </label>
+                            <h3>{{ task.title }}</h3>
+                            <h3>{{ task.time }}</h3>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="fab" (click)="onClickAddTask()">+ </div>
+
+</div>
